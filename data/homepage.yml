@@ -1,14 +1,14 @@
 # page title
 head:
-  title: "Demo site for Adritian - a high performance hugo theme by Adrián Moreno"
+  title: "DougalIO - A place for me to share things"
   description: "This hugo theme (Adritian) is based on Boostrap and has features that make it suitable for a personal site, a portfolio or other kind of Single Page Applications."
 # showcase
 showcase:
   enable: true
-  title: "Hello, I’m Cool."
-  subtitle: "This is my title"
+  title: "Hello, I’m Dougal."
+  subtitle: "Investor/Advisor/Dog Dad"
   description: >
-    This is a good place to start with an introduction about yourself. Maybe a mention to the place <a target='_blank' href='https://www.adrianmoreno.info/'>where you work</a>. You can also mention where you live, your background and what's the purpose of the site. <br>You can download this theme from <a target='_blank' href='https://github.com/zetxek/adritian-free-hugo-theme'>github</a>, and see it live <a target='_blank' href="https://adritian-demo.vercel.app//">as a demo site</a> or <a target='_blank' href="https://www.adrianmoreno.info">a real one</a>.<br>You can find this content to edit in the theme.yaml file.
+    Based in Seattle 🇺🇸, I am advisor and investor focused on early stage startups, specifically in the hard tech space. <br>I have a diverse background of over 25 years in tech, covering Cloud Computing, High Performance Computing (HPC), and Telecommunucations. I am passionate about building and working with builders. Oh and last not least I am dad to two dogs, Winston and Macallan. 
   image:
     x: "images/showcase/showcase.png"
     _2x: "images/showcase/showcase@2x.png"
@@ -18,38 +18,14 @@ showcase:
   button:
     icon: "icon-mail-fill"
     btnText: "Contact"
-    URL: "https://www.adrianmoreno.info/"
+    URL: "https://www.dougal.io/"
 
   socialLinks:
     - icon: "linkedin"
-      URL: "https://www.linkedin.com/in/adrianmoreno/"
+      URL: "https://www.linkedin.com/in/dougalb/"
 
     - icon: "github"
-      URL: "https://github.com/zetxek"
-
-    - icon: "twitter"
-      URL: "https://twitter.com/zetxek"
-
-    - icon: "dribbble"
-      URL: "#"
-
-    - icon: "behance"
-      URL: "#"
-
-    - icon: "youtube"
-      URL: "#"
-
-    - icon: "instagram"
-      URL: "https://www.instagram.com/zetxek/"
-
-    - icon: "facebook"
-      URL: "https://www.facebook.com/zetxek/"
-
-    - icon: "codepen"
-      URL: "#"
-
-    - icon: "yelp"
-      URL: "https://www.yelp.com/"
+      URL: "https://github.com/dougalb"
 
 # about
 about:
