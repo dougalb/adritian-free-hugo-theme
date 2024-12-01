@@ -9569,7 +9569,8 @@ br {
     }
 }
 .contact__info,
-.experience + .experience {
+.experience + .experience,
+.patent + .patent {
     padding-top: 50px;
 }
 .contact__info h3 {
@@ -9615,7 +9616,8 @@ textarea:focus, textarea:active {
     border-bottom: 1px solid black;
 }
 .education__date,
-.experience__date {
+.experience__date, 
+.patent_issued {
     line-height: 1.57;
 }
 input[type="text"]::-webkit-input-placeholder,
@@ -9743,7 +9745,8 @@ input[type="email"]::placeholder {
     z-index: 2;
 }
 .education__degree,
-.experience__date {
+.experience__date,
+.patent_issued {
     font-size: 14px;
     font-weight: 300;
     color: #333;
@@ -9778,14 +9781,15 @@ html body {
         margin-right: 0;
     }
 }
-.experience__title {
+.experience__title,
+.patent_title {
     position: relative;
     font-size: 20px;
     font-weight: 600;
     z-index: 2;
 }
 @media (min-width: 992px) {
-    .experience__title {
+    .experience__title, .patent_title {
         font-size: 24px;
     }
 }
@@ -10701,7 +10705,7 @@ body.home div.experience{
     padding-top: 50px;
 }
 
-.experience a {
+.experience, .patent a {
     display: block;
     padding: 20px;
     text-decoration: none;
@@ -10709,22 +10713,33 @@ body.home div.experience{
 }
 
 .experience.selected a,
+.patent.selected a,
 .experience:hover a,
+.patent:hover a,
 .experience:active a,
-.experience a:hover, 
-.experience a:active{
+.patent:active a,
+.experience a:hover,
+.patent a:hover,
+.experience a:active,
+.patent a:active {
     display: block;
     background-color: #cd4949;
 }
 .experience.selected a > .experience__company,
+.patent.selected a > .patent__company,
 .experience:hover a > .experience__company,
+.patent:hover a > .patent__company,
 .experience:active a > .experience__company,
+.patent:active a > .patent__company,
 .experience a:hover > .experience__company,
-.experience a:active > .experience__company{
+.patent a:hover > .patent__company,
+.experience a:active > .experience__company,
+.patent a:active > .patent__company {
     color: white;
 }
 
-.all-experience-container{
+.all-experience-container,
+.all-patent-container{
     margin-top: 50px;
 }
 .footer__copy a{
@@ -10872,14 +10887,14 @@ aside.content-browser{
     .rad-showcase .platform-links [class^="icon-"]{
         color: #fff;
     }
-    .experience a{
+    .experience, .patent a{
         color: #fff;
     }
-    .experience__company{
+    .experience__company, .patent_title {
         color: #cd4949;
     }
     
-    .education__degree, .experience__date{
+    .education__degree, .experience__date, .patent_issued{
         color: #a6a6a6;
     }
     .education__title{

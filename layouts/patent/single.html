@@ -1,0 +1,86 @@
+<!-- inject:../components/baseHead/baseHeadStart.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{ partial "head.html" . }} {{ partial "head_custom.html" . }}
+</head>
+
+<body>
+  {{ partial "header.html" . }}
+
+  <section id="patent" class="section section--border-bottom rad-animation-group">
+    <div class="container">
+      <div class="row flex-column-reverse flex-md-row rad-fade-down">
+        <div class="col-12 col-md-5 mt-5 mt-sm-0">
+
+          {{ $baseLangSite := .Sites.Default }}
+          {{ $currentPageID := .Page.File.UniqueID }}
+
+          {{ $xp := (where .Site.RegularPages.ByDate.Reverse "Type" "patent") }}
+          {{ $xp = $xp | lang.Merge (where $baseLangSite.RegularPages.ByDate.Reverse "Type" "patent") }}
+          {{ range $xp }}
+
+          <div class="patent {{ if eq .Page.File.UniqueID $currentPageID }} selected {{ end }}">
+            <a href="{{.Permalink}}">
+              {{/* The context, ".", is now each one of the pages as it goes
+              through the loop */}}
+              <div class="patent__title">{{ .Params.patentTitle }}</div>
+              <div class="patent__id">
+                {{ .Params.patentId }}
+                <span class="patent__issued"> · Issued {{ .Params.issued}}</span>
+              </div>
+            </a>
+          </div>
+          {{ end }}
+        </div>
+        <div class="col-12 col-md-7 mt-7 mt-sm-0">
+          <!-- Patent Title -->
+          <h1 class="patent-detail__title">{{ .Params.patentTitle }}</h1>
+
+          <!-- Inventors Section -->
+          {{ if .Params.inventors }}
+          <div class="patent-detail__inventors">
+            <h3>Inventors</h3>
+            <div class="inventors-list">
+              {{ range $index, $inventor := .Params.inventors }}
+              {{- if gt $index 0 }}, {{ end -}}
+              {{- if $inventor.linkedin -}}
+              <a href="{{ $inventor.linkedin }}" target="_blank">{{ $inventor.name }}</a>
+              {{- else -}}
+              {{- $inventor.name -}}
+              {{- end -}}
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+
+          <!-- Abstract Section -->
+          {{ if .Params.abstract }}
+          <div class="patent-detail__abstract">
+            <h3>Abstract</h3>
+            <p>{{ .Params.abstract }}</p>
+          </div>
+          {{ end }}
+
+          <!-- Patent Action Buttons -->
+          <div class="patent-detail__actions mt-4">
+            {{ if .Params.patentUrl }}
+            <a href="{{ .Params.patentUrl }}" target="_blank" class="btn btn-primary mr-3">View Full Patent</a>
+            {{ end }}
+            {{ if .Params.pdfUrl }}
+            <a href="{{ .Params.pdfUrl }}" target="_blank" class="btn btn-outline-primary">Download PDF</a>
+            {{ end }}
+          </div>
+          <!-- This can likely be removed -->
+          {{ .Content | safeHTML }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{ partial "footer.html" . }} {{ partial "base-foot.html" . }}
+</body>
+
+</html>
+<!-- endinject -->
