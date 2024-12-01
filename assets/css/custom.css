@@ -1,11 +1,11 @@
 /* You can customize theme styles here */
 .header .navbar-brand span:first-child{
-    color: #478079;
+    color: #cd4949;
 }
 .header .container{
     padding-left: 10px;
 }
 
 html body ::selection{
-    background-color:#488079;color:#fff
+    background-color:#cd4949;color:#fff
 }
